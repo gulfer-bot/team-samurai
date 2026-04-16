@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Samurai</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: #020617;
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 🔥 PAGE FADE IN */
+body {
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* 🔥 LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: orange;
+}
+
+.logo svg {
+  width: 34px;
+  fill: orange;
+}
+
+/* LINKS */
+nav a {
+  margin-left: 18px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: orange;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.hero h1 {
+  font-size: 55px;
+  color: orange;
+  text-shadow: 0 0 20px rgba(255,140,0,0.6);
+}
+
+.hero p {
+  color: #cbd5e1;
+}
+
+/* SECTION */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* CARDS */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 240px;
+  background: #1e293b;
+  padding: 18px;
+  border-radius: 12px;
+  transition: 0.4s ease;
+  transform: translateY(0);
+}
+
+/* 🔥 ANIMATION HOVER */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 20px orange;
+}
+
+.role {
+  color: orange;
+}
+
+/* STATS BAR */
+.bar {
+  height: 6px;
+  background: #334155;
+  margin-top: 6px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: orange;
+  animation: load 1.5s ease-in;
+}
+
+@keyframes load {
+  from { width: 0; }
+}
+
+/* MATCHES */
+.match {
+  background: #1e293b;
+  margin: 10px auto;
+  max-width: 500px;
+  padding: 12px;
+  border-left: 4px solid orange;
+  transition: 0.3s;
+}
+
+.match:hover {
+  transform: scale(1.02);
+}
+
+/* EMBEDS */
+.embed-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+iframe {
+  border-radius: 12px;
+  width: 340px;
+  height: 200px;
+  border: none;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    <!-- 🔥 BETTER SAMURAI LOGO -->
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4zm0 6l-4 2v3c0 2.5 1.7 4.7 4 5 2.3-.3 4-2.5 4-5V10l-4-2z"/>
+    </svg>
+    <b>Team Samurai</b>
+  </div>
+
+  <div>
+    <a href="#team">Team</a>
+    <a href="#stats">Stats</a>
+    <a href="#media">Media</a>
+    <a href="#matches">Matches</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>TEAM SAMURAI</h1>
+  <p>BGMI Competitive Esports Organization</p>
+</section>
+
+<!-- TEAM -->
+<section class="section" id="team">
+<h2>Roster</h2>
+
+<div class="team">
+
+<div class="card">
+<h3>Iconic</h3>
+<p class="role">T1 Player</p>
+<p>27K YouTube</p>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="card">
+<h3>Ajay Kumar</h3>
+<p class="role">IGL</p>
+<div class="bar"><div class="fill" style="width:80%"></div></div>
+</div>
+
+<div class="card">
+<h3>Pahadi Jassu</h3>
+<p class="role">Player</p>
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<div class="card">
+<h3>Bilal</h3>
+<p class="role">Player</p>
+<div class="bar"><div class="fill" style="width:82%"></div></div>
+</div>
+
+</div>
+</section>
+
+<!-- MATCHES -->
+<section class="section" id="matches">
+<h2>Match Results</h2>
+
+<div class="match">Match 1 – 2nd Place – 18 Kills</div>
+<div class="match">Match 2 – 5th Place – 10 Kills</div>
+<div class="match">Match 3 – 1st Place – 22 Kills</div>
+
+</section>
+
+<!-- MEDIA (YT + IG EMBEDS PLACEHOLDERS) -->
+<section class="section" id="media">
+<h2>Media</h2>
+
+<p>Replace links inside iframe src with your channel/video links</p>
+
+<div class="embed-box">
+
+<!-- 🔴 YOUTUBE -->
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+
+<!-- 📸 INSTAGRAM -->
+<iframe src="https://www.instagram.com/p/"></iframe>
+
+</div>
+</section>
+
+<footer>
+© 2026 Team Samurai
+</footer>
+
+</body>
+</html>
