@@ -3,175 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team Samurai</title>
+<title>Team Samurai Esports</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Orbitron', sans-serif;
+/* 🌌 GLOBAL */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Orbitron;
 }
 
-body {
-  background: #020617;
-  color: white;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+body{
+  background:#05060a;
+  color:white;
+  overflow-x:hidden;
 }
 
-/* 🔥 PAGE FADE IN */
-body {
-  animation: fadeIn 1.2s ease-in;
+/* 🌠 PARTICLE CANVAS */
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-2;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* 🔷 NEON GRID BACKGROUND */
+.grid-bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background-image:
+    linear-gradient(rgba(255,184,107,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,184,107,0.05) 1px, transparent 1px);
+  background-size:60px 60px;
+  z-index:-1;
+  animation:moveGrid 10s linear infinite;
+}
+
+@keyframes moveGrid{
+  from{transform:translateY(0)}
+  to{transform:translateY(60px)}
 }
 
 /* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 18px 40px;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 999;
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(15px);
+  background:rgba(0,0,0,0.4);
+  border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-/* 🔥 LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: orange;
+nav h2{
+  color:#ffb86b;
+  letter-spacing:2px;
 }
 
-.logo svg {
-  width: 34px;
-  fill: orange;
+nav a{
+  margin-left:15px;
+  text-decoration:none;
+  color:white;
+  opacity:0.7;
+  transition:0.3s;
 }
 
-/* LINKS */
-nav a {
-  margin-left: 18px;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: orange;
+nav a:hover{
+  color:#ffb86b;
+  opacity:1;
 }
 
 /* HERO */
-.hero {
-  text-align: center;
-  padding: 90px 20px;
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-.hero h1 {
-  font-size: 55px;
-  color: orange;
-  text-shadow: 0 0 20px rgba(255,140,0,0.6);
+.hero h1{
+  font-size:70px;
+  background:linear-gradient(90deg,#fff,#ffb86b,#fff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:glitch 2s infinite alternate;
 }
 
-.hero p {
-  color: #cbd5e1;
+@keyframes glitch{
+  0%{text-shadow:2px 2px #ffb86b;}
+  100%{text-shadow:-2px -2px #ffb86b;}
+}
+
+.hero p{
+  opacity:0.7;
+  margin-top:10px;
 }
 
 /* SECTION */
-.section {
-  padding: 60px 20px;
-  text-align: center;
+section{
+  padding:80px 20px;
+  text-align:center;
 }
 
-/* CARDS */
-.team {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+/* TITLE */
+h2{
+  margin-bottom:30px;
+  color:#ffb86b;
+  letter-spacing:2px;
 }
 
-.card {
-  width: 240px;
-  background: #1e293b;
-  padding: 18px;
-  border-radius: 12px;
-  transition: 0.4s ease;
-  transform: translateY(0);
+/* CARD SYSTEM */
+.grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
 }
 
-/* 🔥 ANIMATION HOVER */
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 0 20px orange;
+.card{
+  width:270px;
+  padding:18px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:14px;
+  transition:0.4s;
+  backdrop-filter:blur(10px);
+  position:relative;
+  overflow:hidden;
 }
 
-.role {
-  color: orange;
+.card::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:radial-gradient(circle,rgba(255,184,107,0.15),transparent);
+  top:0;
+  left:0;
+  opacity:0;
+  transition:0.4s;
 }
 
-/* STATS BAR */
-.bar {
-  height: 6px;
-  background: #334155;
-  margin-top: 6px;
-  border-radius: 5px;
-  overflow: hidden;
+.card:hover::before{
+  opacity:1;
 }
 
-.fill {
-  height: 100%;
-  background: orange;
-  animation: load 1.5s ease-in;
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  border-color:#ffb86b;
 }
 
-@keyframes load {
-  from { width: 0; }
+/* MATCH */
+.match{
+  max-width:600px;
+  margin:10px auto;
+  padding:14px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;
+  transition:0.3s;
 }
 
-/* MATCHES */
-.match {
-  background: #1e293b;
-  margin: 10px auto;
-  max-width: 500px;
-  padding: 12px;
-  border-left: 4px solid orange;
-  transition: 0.3s;
+.match:hover{
+  transform:scale(1.03);
+  border-color:#ffb86b;
 }
 
-.match:hover {
-  transform: scale(1.02);
+/* FADE IN SCROLL */
+.hidden{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.8s ease;
 }
 
-/* EMBEDS */
-.embed-box {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-iframe {
-  border-radius: 12px;
-  width: 340px;
-  height: 200px;
-  border: none;
+.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: black;
+footer{
+  padding:30px;
+  text-align:center;
+  opacity:0.6;
 }
 
 </style>
@@ -179,93 +201,131 @@ footer {
 
 <body>
 
-<nav>
-  <div class="logo">
-    <!-- 🔥 BETTER SAMURAI LOGO -->
-    <svg viewBox="0 0 24 24">
-      <path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4zm0 6l-4 2v3c0 2.5 1.7 4.7 4 5 2.3-.3 4-2.5 4-5V10l-4-2z"/>
-    </svg>
-    <b>Team Samurai</b>
-  </div>
+<div class="grid-bg"></div>
+<canvas id="particles"></canvas>
 
+<!-- NAV -->
+<nav>
+  <h2>TEAM SAMURAI</h2>
   <div>
     <a href="#team">Team</a>
-    <a href="#stats">Stats</a>
-    <a href="#media">Media</a>
     <a href="#matches">Matches</a>
+    <a href="#links">Links</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>TEAM SAMURAI</h1>
-  <p>BGMI Competitive Esports Organization</p>
-</section>
+<div class="hero">
+  <h1>FUTURE OF ESPORTS</h1>
+  <p>Team Samurai — Competitive BGMI Organization</p>
+</div>
 
 <!-- TEAM -->
-<section class="section" id="team">
-<h2>Roster</h2>
+<section id="team">
+<h2>ROSTER</h2>
 
-<div class="team">
+<div class="grid">
 
-<div class="card">
-<h3>Iconic</h3>
-<p class="role">T1 Player</p>
-<p>27K YouTube</p>
-<div class="bar"><div class="fill" style="width:90%"></div></div>
-</div>
+<div class="card hidden">Raj<br>Owner • 8K YT</div>
+<div class="card hidden">Karan<br>Co-Owner</div>
+<div class="card hidden">Ultron<br>Manager</div>
 
-<div class="card">
-<h3>Ajay Kumar</h3>
-<p class="role">IGL</p>
-<div class="bar"><div class="fill" style="width:80%"></div></div>
-</div>
-
-<div class="card">
-<h3>Pahadi Jassu</h3>
-<p class="role">Player</p>
-<div class="bar"><div class="fill" style="width:85%"></div></div>
-</div>
-
-<div class="card">
-<h3>Bilal</h3>
-<p class="role">Player</p>
-<div class="bar"><div class="fill" style="width:82%"></div></div>
-</div>
+<div class="card hidden">Iconic<br>27K YT • T1 Player</div>
+<div class="card hidden">Pahadi Jassu<br>50K Finals</div>
+<div class="card hidden">Bilal<br>50K Finalist</div>
+<div class="card hidden">Ajay Kumar<br>IGL • RVNC</div>
 
 </div>
 </section>
 
 <!-- MATCHES -->
-<section class="section" id="matches">
-<h2>Match Results</h2>
+<section id="matches">
+<h2>MATCH HISTORY</h2>
 
-<div class="match">Match 1 – 2nd Place – 18 Kills</div>
-<div class="match">Match 2 – 5th Place – 10 Kills</div>
-<div class="match">Match 3 – 1st Place – 22 Kills</div>
+<div class="match hidden">🥇 Chicken Dinner - 14 Kills</div>
+<div class="match hidden">🥈 2nd - 10 Kills</div>
+<div class="match hidden">🥇 Chicken Dinner - 12 Kills</div>
+<div class="match hidden">#11 - 8 Kills</div>
+<div class="match hidden">#4 - 9 Kills</div>
+<div class="match hidden">#5 - 7 Kills</div>
+<div class="match hidden">🥈 2nd - 10 Kills</div>
+<div class="match hidden">#6 - 6 Kills</div>
+<div class="match hidden">🥇 Chicken - 13 Kills</div>
+<div class="match hidden">#3 - 9 Kills</div>
 
 </section>
 
-<!-- MEDIA (YT + IG EMBEDS PLACEHOLDERS) -->
-<section class="section" id="media">
-<h2>Media</h2>
+<!-- LINKS -->
+<section id="links">
+<h2>CONNECT</h2>
 
-<p>Replace links inside iframe src with your channel/video links</p>
+<div class="grid">
 
-<div class="embed-box">
-
-<!-- 🔴 YOUTUBE -->
-<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-
-<!-- 📸 INSTAGRAM -->
-<iframe src="https://www.instagram.com/p/"></iframe>
+<div class="card hidden">YouTube<br>Official Channel</div>
+<div class="card hidden">Instagram<br>@team_samurai07</div>
+<div class="card hidden">Discord<br>8CWxSuam</div>
+<div class="card hidden">Email<br>teamsamurai43@gmail.com</div>
 
 </div>
 </section>
 
 <footer>
-© 2026 Team Samurai
+© 2026 Team Samurai Esports
 </footer>
+
+<script>
+
+/* 🌠 PARTICLE SYSTEM */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+  particles.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*2,
+    d:Math.random()*1
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="rgba(255,184,107,0.5)";
+
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fill();
+    p.y += p.d;
+
+    if(p.y > canvas.height){
+      p.y = 0;
+    }
+  });
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+/* 🔥 SCROLL ANIMATION */
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".hidden").forEach(el=>{
+  observer.observe(el);
+});
+
+</script>
 
 </body>
 </html>
