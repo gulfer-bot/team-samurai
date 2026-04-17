@@ -3,50 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team Samurai Esports</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+<title>Team Samurai</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* 🌌 GLOBAL */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Orbitron;
-}
-
+/* 🌿 THEME */
 body{
-  background:#05060a;
-  color:white;
-  overflow-x:hidden;
-}
-
-/* 🌠 PARTICLE CANVAS */
-canvas{
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:-2;
-}
-
-/* 🔷 NEON GRID BACKGROUND */
-.grid-bg{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background-image:
-    linear-gradient(rgba(255,184,107,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,184,107,0.05) 1px, transparent 1px);
-  background-size:60px 60px;
-  z-index:-1;
-  animation:moveGrid 10s linear infinite;
-}
-
-@keyframes moveGrid{
-  from{transform:translateY(0)}
-  to{transform:translateY(60px)}
+  margin:0;
+  font-family:Orbitron;
+  background:#f5efe6;
+  color:#3e3e3e;
 }
 
 /* NAV */
@@ -54,146 +23,81 @@ nav{
   display:flex;
   justify-content:space-between;
   padding:20px 40px;
-  position:sticky;
-  top:0;
-  backdrop-filter:blur(15px);
-  background:rgba(0,0,0,0.4);
-  border-bottom:1px solid rgba(255,255,255,0.1);
+  background:#fff7ed;
+  border-bottom:1px solid #e6d5c3;
 }
 
 nav h2{
-  color:#ffb86b;
-  letter-spacing:2px;
-}
-
-nav a{
-  margin-left:15px;
-  text-decoration:none;
-  color:white;
-  opacity:0.7;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:#ffb86b;
-  opacity:1;
+  color:#c08a5b;
 }
 
 /* HERO */
 .hero{
-  height:90vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
   text-align:center;
+  padding:60px 20px;
 }
 
 .hero h1{
-  font-size:70px;
-  background:linear-gradient(90deg,#fff,#ffb86b,#fff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  animation:glitch 2s infinite alternate;
+  font-size:50px;
+  color:#c08a5b;
 }
 
-@keyframes glitch{
-  0%{text-shadow:2px 2px #ffb86b;}
-  100%{text-shadow:-2px -2px #ffb86b;}
-}
-
-.hero p{
-  opacity:0.7;
-  margin-top:10px;
-}
-
-/* SECTION */
-section{
-  padding:80px 20px;
-  text-align:center;
-}
-
-/* TITLE */
-h2{
-  margin-bottom:30px;
-  color:#ffb86b;
-  letter-spacing:2px;
-}
-
-/* CARD SYSTEM */
+/* GRID */
 .grid{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
+  padding:40px;
 }
 
+/* CARD */
 .card{
-  width:270px;
-  padding:18px;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:14px;
-  transition:0.4s;
-  backdrop-filter:blur(10px);
-  position:relative;
-  overflow:hidden;
-}
-
-.card::before{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:radial-gradient(circle,rgba(255,184,107,0.15),transparent);
-  top:0;
-  left:0;
-  opacity:0;
-  transition:0.4s;
-}
-
-.card:hover::before{
-  opacity:1;
+  width:250px;
+  padding:20px;
+  background:#fffaf4;
+  border-radius:15px;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
 .card:hover{
-  transform:translateY(-10px) scale(1.03);
-  border-color:#ffb86b;
+  transform:translateY(-10px);
+  background:#fdebdc;
 }
 
-/* MATCH */
-.match{
-  max-width:600px;
-  margin:10px auto;
-  padding:14px;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:10px;
-  transition:0.3s;
-}
-
-.match:hover{
-  transform:scale(1.03);
-  border-color:#ffb86b;
-}
-
-/* FADE IN SCROLL */
-.hidden{
-  opacity:0;
-  transform:translateY(30px);
-  transition:all 0.8s ease;
-}
-
-.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* FOOTER */
-footer{
-  padding:30px;
+/* PROFILE PAGE */
+.profile{
+  display:none;
   text-align:center;
-  opacity:0.6;
+  padding:40px;
+}
+
+.profile img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#ddd;
+}
+
+.btn{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  background:#c08a5b;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* LINKS */
+.link{
+  display:block;
+  margin:8px;
+  color:#c08a5b;
+  text-decoration:none;
 }
 
 </style>
@@ -201,129 +105,155 @@ footer{
 
 <body>
 
-<div class="grid-bg"></div>
-<canvas id="particles"></canvas>
-
-<!-- NAV -->
 <nav>
   <h2>TEAM SAMURAI</h2>
-  <div>
-    <a href="#team">Team</a>
-    <a href="#matches">Matches</a>
-    <a href="#links">Links</a>
-  </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <h1>FUTURE OF ESPORTS</h1>
-  <p>Team Samurai — Competitive BGMI Organization</p>
+  <h1>Team Samurai</h1>
+  <p>BGMI Competitive Squad</p>
 </div>
 
-<!-- TEAM -->
-<section id="team">
-<h2>ROSTER</h2>
+<!-- PLAYER GRID -->
+<div class="grid" id="team"></div>
 
-<div class="grid">
+<!-- PROFILE VIEW -->
+<div class="profile" id="profile"></div>
 
-<div class="card hidden">Raj<br>Owner • 8K YT</div>
-<div class="card hidden">Karan<br>Co-Owner</div>
-<div class="card hidden">Ultron<br>Manager</div>
+<!-- 🔊 CLICK SOUND -->
+<audio id="clickSound" src="click.mp3"></audio>
 
-<div class="card hidden">Iconic<br>27K YT • T1 Player</div>
-<div class="card hidden">Pahadi Jassu<br>50K Finals</div>
-<div class="card hidden">Bilal<br>50K Finalist</div>
-<div class="card hidden">Ajay Kumar<br>IGL • RVNC</div>
-
-</div>
-</section>
-
-<!-- MATCHES -->
-<section id="matches">
-<h2>MATCH HISTORY</h2>
-
-<div class="match hidden">🥇 Chicken Dinner - 14 Kills</div>
-<div class="match hidden">🥈 2nd - 10 Kills</div>
-<div class="match hidden">🥇 Chicken Dinner - 12 Kills</div>
-<div class="match hidden">#11 - 8 Kills</div>
-<div class="match hidden">#4 - 9 Kills</div>
-<div class="match hidden">#5 - 7 Kills</div>
-<div class="match hidden">🥈 2nd - 10 Kills</div>
-<div class="match hidden">#6 - 6 Kills</div>
-<div class="match hidden">🥇 Chicken - 13 Kills</div>
-<div class="match hidden">#3 - 9 Kills</div>
-
-</section>
-
-<!-- LINKS -->
-<section id="links">
-<h2>CONNECT</h2>
-
-<div class="grid">
-
-<div class="card hidden">YouTube<br>Official Channel</div>
-<div class="card hidden">Instagram<br>@team_samurai07</div>
-<div class="card hidden">Discord<br>8CWxSuam</div>
-<div class="card hidden">Email<br>teamsamurai43@gmail.com</div>
-
-</div>
-</section>
-
-<footer>
-© 2026 Team Samurai Esports
-</footer>
+<!-- 🎵 BACKGROUND MUSIC -->
+<audio id="bgMusic" src="music.mp3" loop autoplay></audio>
 
 <script>
 
-/* 🌠 PARTICLE SYSTEM */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
+/* 🎮 PLAYER DATA (EDIT PHOTOS HERE LATER) */
+const players = [
+{
+name:"Raj",
+role:"Owner",
+ign:"TSxRXJ",
+uid:"55720702033",
+discord:"@TSxRAJ",
+insta:"https://instagram.com/raj_odedra.00",
+whatsapp:"6356117045",
+photo:"" // paste image link here later
+},
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+{
+name:"Karan",
+role:"Co-Owner",
+ign:"TSxTankerz",
+uid:"5775954453",
+discord:"@TSxTankerz",
+insta:"https://instagram.com/k_a_r_a_n_k_u_s_h_w_a_h_a",
+whatsapp:"8368245973",
+photo:""
+},
 
-let particles = [];
+{
+name:"Pahadi Jassu",
+role:"Player",
+ign:"TSxBLACKyyy",
+uid:"55592786109",
+discord:"@pahadii jassu",
+insta:"https://www.instagram.com/jass_sekhon_5911",
+achievements:"50K Grand Finalist, Max Esports, 20K RVNC, 15K Winner",
+photo:""
+},
 
-for(let i=0;i<80;i++){
-  particles.push({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*2,
-    d:Math.random()*1
-  });
+{
+name:"Iconic",
+role:"T1 Player",
+ign:"TSxIC0NIC",
+uid:"55582848562",
+discord:"@ICONIC",
+achievements:"BGIS 2026 R2, 50K Semis, 60K Semis, 30K Finalist",
+photo:""
+},
+
+{
+name:"Bilal",
+role:"Player",
+ign:"TSxBilalOP",
+uid:"5186906756",
+discord:"@BILAL",
+insta:"https://instagram.com/yng.bilal",
+whatsapp:"9265037183",
+achievements:"50K Max, 50K Finalist, 20K RVNC",
+photo:""
+},
+
+{
+name:"Ajay Kumar",
+role:"IGL",
+ign:"RFTCxAJAY",
+uid:"55572747205",
+discord:"@Ajaykumar",
+insta:"https://instagram.com/ajay_555554",
+achievements:"50K Max, 20K RVNC",
+photo:""
+},
+
+{
+name:"Ultron",
+role:"Manager",
+insta:"https://www.instagram.com/_ultron.y",
+photo:""
 }
+];
 
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle="rgba(255,184,107,0.5)";
+/* 🎮 LOAD CARDS */
+const teamDiv = document.getElementById("team");
 
-  particles.forEach(p=>{
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fill();
-    p.y += p.d;
-
-    if(p.y > canvas.height){
-      p.y = 0;
-    }
-  });
-
-  requestAnimationFrame(draw);
-}
-draw();
-
-/* 🔥 SCROLL ANIMATION */
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
+players.forEach((p,i)=>{
+  let card = document.createElement("div");
+  card.className="card";
+  card.innerHTML=`${p.name}<br><small>${p.role}</small>`;
+  
+  card.onclick = () => showProfile(p);
+  
+  teamDiv.appendChild(card);
 });
 
-document.querySelectorAll(".hidden").forEach(el=>{
-  observer.observe(el);
-});
+/* 📄 PROFILE VIEW */
+function showProfile(p){
+
+document.getElementById("clickSound").play();
+
+document.getElementById("team").style.display="none";
+
+let profile = document.getElementById("profile");
+
+profile.style.display="block";
+
+profile.innerHTML = `
+<img src="${p.photo || 'https://via.placeholder.com/150'}">
+
+<h2>${p.name}</h2>
+<p>${p.role || ""}</p>
+
+<p><b>IGN:</b> ${p.ign || "-"}</p>
+<p><b>UID:</b> ${p.uid || "-"}</p>
+<p><b>Discord:</b> ${p.discord || "-"}</p>
+<p><b>Achievements:</b> ${p.achievements || "-"}</p>
+
+${p.insta ? `<a class="link" href="${p.insta}" target="_blank">Instagram</a>` : ""}
+${p.whatsapp ? `<a class="link" href="https://wa.me/${p.whatsapp}">WhatsApp</a>` : ""}
+
+<button class="btn" onclick="goBack()">Back</button>
+`;
+}
+
+/* 🔙 BACK */
+function goBack(){
+document.getElementById("profile").style.display="none";
+document.getElementById("team").style.display="flex";
+}
+
+/* 🔉 LOWER MUSIC VOLUME */
+document.getElementById("bgMusic").volume = 0.2;
 
 </script>
 
