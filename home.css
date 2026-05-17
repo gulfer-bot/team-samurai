@@ -112,7 +112,18 @@ gap:12px;
 }
 
 .nav-logo{
-width:65px;
+
+ width:95px;
+ height:auto;
+
+ transition:
+ transform .3s ease;
+}
+
+.nav-logo:hover{
+
+ transform:
+ scale(1.06);
 }
 
 .brand-section h2{
