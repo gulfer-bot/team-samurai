@@ -1,0 +1,123 @@
+:root {
+  --bg-main: #23241f;
+  --card-bg: rgba(245,238,224,0.08);
+  --beige: #efe6d3;
+  --green: #89a67d;
+  --purple: #7d6ca8;
+  --border: rgba(255,255,255,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  color: var(--beige);
+  background:
+    radial-gradient(circle at top left, rgba(137,166,125,.18), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(125,108,168,.08), transparent 35%),
+    linear-gradient(135deg, #1e1f1b, #2b2c26, #35332d);
+}
+
+.about-header {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.about-header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3.5rem;
+}
+
+.back-home {
+  text-decoration: none;
+  color: var(--green);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  box-shadow: 0 20px 80px rgba(0,0,0,.35);
+}
+
+.about-hero {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 6%;
+}
+
+.hero-card {
+  max-width: 900px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--green);
+}
+
+.hero-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.journey-grid {
+  padding: 4rem 6%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 2rem;
+}
+
+.journey-card {
+  padding: 2rem;
+  transition: .4s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 0 40px rgba(137,166,125,.15);
+}
+
+.vision-section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 3rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.vision-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+blockquote {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: var(--green);
+  font-style: italic;
+}
+
+@media(max-width:768px){
+  .about-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-card h2 {
+    font-size: 1.8rem;
+  }
+}

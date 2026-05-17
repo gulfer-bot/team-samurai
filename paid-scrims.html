@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    QbitU Gaming — Paid Scrims
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="paid-scrims.css"
+  />
+
+  <link rel="preconnect"
+  href="https://fonts.googleapis.com">
+
+  <link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;700;800&display=swap"
+  rel="stylesheet"
+  >
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+
+<!-- HEADER -->
+<header class="scrim-header">
+
+  <a
+    href="home.html"
+    class="back-home"
+  >
+    ← Back Home
+  </a>
+
+  <div class="header-content">
+
+    <span class="mini-badge">
+      QbitU Gaming • Premium Scrims
+    </span>
+
+    <h1>
+      PAID SCRIMS
+    </h1>
+
+    <p>
+      Register your BGMI or Valorant
+      roster for premium scrims,
+      competitive lobbies and
+      structured tournaments hosted
+      by QbitU Gaming.
+    </p>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+<section class="hero-section glass-card">
+
+  <div class="hero-left">
+
+    <span class="section-tag">
+      QbitU GAMING
+    </span>
+
+    <h2>
+      Serious Competition Starts Here
+    </h2>
+
+    <p>
+      Premium paid scrims built
+      for serious esports teams.
+      Better lobbies, stronger
+      opponents and competitive
+      growth.
+    </p>
+
+  </div>
+
+  <div class="hero-right">
+
+    <div class="hero-box">
+      <h3>BGMI</h3>
+      <span>Competitive Scrims</span>
+    </div>
+
+    <div class="hero-box">
+      <h3>VALORANT</h3>
+      <span>Structured Matches</span>
+    </div>
+
+    <div class="hero-box">
+      <h3>T2+</h3>
+      <span>High Quality Lobbies</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GAME SELECT -->
+<section class="section-title">
+
+  <span>
+    SCRIM REGISTRATION
+  </span>
+
+  <h2>
+    Choose Your Game
+  </h2>
+
+</section>
+
+<section class="game-buttons">
+
+  <button
+    class="game-btn active"
+    onclick="showForm('bgmi')"
+  >
+    BGMI SCRIMS
+  </button>
+
+  <button
+    class="game-btn"
+    onclick="showForm('valorant')"
+  >
+    VALORANT SCRIMS
+  </button>
+
+</section>
+
+<!-- BGMI FORM -->
+<section
+id="bgmi-form"
+class="form-wrapper glass-card active-form"
+>
+
+<h2>
+BGMI Registration
+</h2>
+
+<form class="scrim-form">
+
+<div class="input-group">
+<label>Team Name</label>
+<input
+type="text"
+placeholder="Enter Team Name"
+/>
+</div>
+
+<h3>
+Player Details
+</h3>
+
+<!-- PLAYER LOOP -->
+
+<div class="players-grid">
+
+<!-- P1 -->
+<div class="player-box">
+<h4>Player 1</h4>
+
+<input
+type="text"
+placeholder="Real Name"
+/>
+
+<input
+type="number"
+placeholder="Age"
+/>
+
+<input
+type="text"
+placeholder="In Game Name"
+/>
+
+<input
+type="text"
+placeholder="UID"
+/>
+</div>
+
+<!-- P2 -->
+<div class="player-box">
+<h4>Player 2</h4>
+
+<input
+type="text"
+placeholder="Real Name"
+/>
+
+<input
+type="number"
+placeholder="Age"
+/>
+
+<input
+type="text"
+placeholder="In Game Name"
+/>
+
+<input
+type="text"
+placeholder="UID"
+/>
+</div>
+
+<!-- P3 -->
+<div class="player-box">
+<h4>Player 3</h4>
+
+<input
+type="text"
+placeholder="Real Name"
+/>
+
+<input
+type="number"
+placeholder="Age"
+/>
+
+<input
+type="text"
+placeholder="In Game Name"
+/>
+
+<input
+type="text"
+placeholder="UID"
+/>
+</div>
+
+<!-- P4 -->
+<div class="player-box">
+<h4>Player 4</h4>
+
+<input
+type="text"
+placeholder="Real Name"
+/>
+
+<input
+type="number"
+placeholder="Age"
+/>
+
+<input
+type="text"
+placeholder="In Game Name"
+/>
+
+<input
+type="text"
+placeholder="UID"
+/>
+</div>
+
+<!-- SUBSTITUTE -->
+<div class="player-box substitute">
+
+<h4>
+Substitute Player
+</h4>
+
+<input
+type="text"
+placeholder="Real Name"
+/>
+
+<input
+type="number"
+placeholder="Age"
+/>
+
+<input
+type="text"
+placeholder="In Game Name"
+/>
+
+<input
+type="text"
+placeholder="UID"
+/>
+
+</div>
+
+</div>
+
+<button
+type="submit"
+class="submit-btn"
+>
+Register Team
+</button>
+
+</form>
+</section>
+
+<!-- VALORANT -->
+<section
+id="valorant-form"
+class="form-wrapper glass-card"
+>
+
+<h2>
+Valorant Registration
+</h2>
+
+<form class="scrim-form">
+
+<div class="input-group">
+<label>Team Name</label>
+<input
+type="text"
+placeholder="Enter Team Name"
+/>
+</div>
+
+<div class="players-grid">
+
+<div class="player-box">
+<h4>Player 1</h4>
+<input type="text"
+placeholder="Real Name"/>
+<input type="number"
+placeholder="Age"/>
+<input type="text"
+placeholder="In Game Name"/>
+<input type="text"
+placeholder="Profile Code"/>
+</div>
+
+<div class="player-box">
+<h4>Player 2</h4>
+<input type="text"
+placeholder="Real Name"/>
+<input type="number"
+placeholder="Age"/>
+<input type="text"
+placeholder="In Game Name"/>
+<input type="text"
+placeholder="Profile Code"/>
+</div>
+
+<div class="player-box">
+<h4>Player 3</h4>
+<input type="text"
+placeholder="Real Name"/>
+<input type="number"
+placeholder="Age"/>
+<input type="text"
+placeholder="In Game Name"/>
+<input type="text"
+placeholder="Profile Code"/>
+</div>
+
+<div class="player-box">
+<h4>Player 4</h4>
+<input type="text"
+placeholder="Real Name"/>
+<input type="number"
+placeholder="Age"/>
+<input type="text"
+placeholder="In Game Name"/>
+<input type="text"
+placeholder="Profile Code"/>
+</div>
+
+<div class="player-box substitute">
+<h4>Substitute Player</h4>
+<input type="text"
+placeholder="Real Name"/>
+<input type="number"
+placeholder="Age"/>
+<input type="text"
+placeholder="In Game Name"/>
+<input type="text"
+placeholder="Profile Code"/>
+</div>
+
+</div>
+
+<button
+type="submit"
+class="submit-btn"
+>
+Register Team
+</button>
+
+</form>
+
+</section>
+
+<script src="paid-scrims.js"></script>
+
+</body>
+</html>

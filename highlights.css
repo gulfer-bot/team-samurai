@@ -1,0 +1,323 @@
+:root{
+  --bg:#23241f;
+  --bg2:#2d2e27;
+  --card:rgba(245,238,224,.07);
+  --text:#efe6d3;
+  --green:#8ca77b;
+  --purple:#7d68aa;
+  --border:rgba(255,255,255,.08);
+  --shadow:0 20px 80px rgba(0,0,0,.35);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  overflow-x:hidden;
+  min-height:100vh;
+
+  background:
+  radial-gradient(
+    circle at top left,
+    rgba(140,167,123,.15),
+    transparent 30%
+  ),
+
+  radial-gradient(
+    circle at bottom right,
+    rgba(125,104,170,.08),
+    transparent 35%
+  ),
+
+  linear-gradient(
+    135deg,
+    #1f201c,
+    #2b2c27,
+    #35322d
+  );
+}
+
+/* ORBS */
+
+.bg-orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(140px);
+  z-index:-1;
+}
+
+.orb-1{
+  width:420px;
+  height:420px;
+  background:
+  rgba(140,167,123,.10);
+
+  top:-120px;
+  left:-100px;
+}
+
+.orb-2{
+  width:350px;
+  height:350px;
+  background:
+  rgba(125,104,170,.08);
+
+  right:-80px;
+  bottom:-80px;
+}
+
+/* HEADER */
+
+.highlights-header{
+  padding:4rem 7%;
+}
+
+.back-home{
+  color:var(--green);
+  text-decoration:none;
+  font-weight:600;
+}
+
+.header-content{
+  max-width:850px;
+  margin-top:2rem;
+}
+
+.mini-badge{
+  display:inline-block;
+  padding:.8rem 1.3rem;
+  border-radius:999px;
+
+  background:
+  rgba(140,167,123,.14);
+
+  color:var(--green);
+  margin-bottom:1rem;
+}
+
+.header-content h1{
+  font-size:4rem;
+  line-height:1.1;
+  margin-bottom:1rem;
+  font-family:'Cinzel',serif;
+}
+
+.header-content p{
+  font-size:1.1rem;
+  line-height:1.9;
+  color:#d7cebc;
+}
+
+/* GLASS */
+
+.glass-card{
+  background:var(--card);
+  backdrop-filter:blur(24px);
+  border:1px solid var(--border);
+  border-radius:36px;
+  box-shadow:var(--shadow);
+}
+
+/* FEATURED */
+
+.featured-highlight{
+  margin:2rem 7%;
+  padding:3rem;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+}
+
+.featured-tag{
+  color:var(--green);
+  font-weight:700;
+}
+
+.featured-left h2{
+  font-size:3rem;
+  margin:1rem 0;
+}
+
+.featured-left p{
+  line-height:1.9;
+  color:#d5ccbc;
+}
+
+.featured-stats{
+  margin-top:2rem;
+
+  display:grid;
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:1rem;
+}
+
+.stat-box{
+  padding:1.5rem;
+  text-align:center;
+  border-radius:24px;
+
+  background:
+  rgba(255,255,255,.03);
+}
+
+.stat-box h3{
+  color:var(--green);
+  font-size:1.8rem;
+}
+
+.featured-right video{
+  width:100%;
+  border-radius:28px;
+}
+
+/* TITLES */
+
+.section-title{
+  text-align:center;
+  padding:4rem 2rem 2rem;
+}
+
+.section-title span{
+  color:var(--green);
+  font-weight:700;
+}
+
+.section-title h2{
+  margin-top:.6rem;
+  font-size:2.8rem;
+}
+
+/* CLIPS */
+
+.clips-grid{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(350px,1fr));
+
+  gap:2rem;
+  padding:2rem 7%;
+}
+
+.clip-card{
+  overflow:hidden;
+  transition:.45s ease;
+}
+
+.clip-card:hover{
+  transform:
+  translateY(-14px)
+  scale(1.02);
+
+  box-shadow:
+  0 0 45px
+  rgba(140,167,123,.18);
+}
+
+.clip-video video{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+
+.clip-content{
+  padding:2rem;
+}
+
+.clip-badge{
+  display:inline-block;
+  padding:.5rem 1rem;
+  border-radius:999px;
+
+  background:
+  rgba(140,167,123,.14);
+
+  color:var(--green);
+  margin-bottom:1rem;
+}
+
+.clip-content h3{
+  font-size:1.8rem;
+  margin-bottom:1rem;
+}
+
+.clip-content p{
+  line-height:1.8;
+  color:#d5ccbc;
+}
+
+/* JOURNEY */
+
+.journey-section{
+  max-width:1100px;
+  margin:
+  5rem auto
+  6rem;
+
+  padding:4rem;
+  text-align:center;
+}
+
+.journey-tag{
+  color:var(--green);
+  font-weight:700;
+}
+
+.journey-section h2{
+  font-size:3rem;
+  margin:1rem 0;
+}
+
+.journey-section p{
+  line-height:2;
+  max-width:800px;
+  margin:auto;
+  color:#d7cebc;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+  .featured-highlight{
+    grid-template-columns:1fr;
+  }
+
+  .featured-stats{
+    grid-template-columns:1fr;
+  }
+
+  .header-content h1{
+    font-size:2.8rem;
+  }
+}
+
+@media(max-width:768px){
+
+  .header-content h1{
+    font-size:2.2rem;
+  }
+
+  .featured-left h2{
+    font-size:2rem;
+  }
+
+  .section-title h2{
+    font-size:2rem;
+  }
+
+  .journey-section h2{
+    font-size:2rem;
+  }
+}

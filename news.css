@@ -1,0 +1,125 @@
+:root{
+ --bg:#23241f;
+ --card:rgba(245,238,224,.08);
+ --text:#efe6d3;
+ --green:#8ca77b;
+ --purple:#7d68aa;
+ --border:rgba(255,255,255,.08);
+}
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+body{
+ font-family:Inter,sans-serif;
+ color:var(--text);
+ background:
+ radial-gradient(circle at top left,rgba(140,167,123,.16),transparent 40%),
+ radial-gradient(circle at bottom right,rgba(125,104,170,.08),transparent 35%),
+ linear-gradient(135deg,#20211d,#2c2d27,#36342f);
+ min-height:100vh;
+ overflow-x:hidden;
+}
+
+.news-header{
+ text-align:center;
+ padding:4rem 2rem;
+}
+
+.news-header h1{
+ font-size:3rem;
+ margin-bottom:.7rem;
+}
+
+.news-header a{
+ color:var(--green);
+ text-decoration:none;
+}
+
+.news-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+ gap:2rem;
+ padding:3rem 6% 5rem;
+}
+
+.news-card{
+ position:relative;
+ padding:2rem;
+ border-radius:30px;
+ background:var(--card);
+ backdrop-filter:blur(24px);
+ border:1px solid var(--border);
+ box-shadow:0 20px 80px rgba(0,0,0,.35);
+ overflow:hidden;
+ transition:.45s ease;
+}
+
+.news-card::before{
+ content:'';
+ position:absolute;
+ inset:0;
+ opacity:0;
+ transition:.4s ease;
+ background:linear-gradient(
+ 135deg,
+ rgba(140,167,123,.08),
+ rgba(125,104,170,.04)
+ );
+}
+
+.news-card:hover::before{
+ opacity:1;
+}
+
+.news-card:hover{
+ transform:translateY(-14px) scale(1.02);
+ box-shadow:0 0 45px rgba(140,167,123,.18);
+}
+
+.news-card span{
+ display:inline-block;
+ margin-bottom:1rem;
+ color:var(--green);
+ font-weight:600;
+}
+
+.news-card h3{
+ font-size:1.5rem;
+ margin-bottom:1rem;
+ line-height:1.4;
+}
+
+.news-card p{
+ line-height:1.8;
+ color:#d9cfbd;
+}
+
+.bgmi{
+ border-left:4px solid rgba(140,167,123,.4);
+}
+
+.valorant{
+ border-left:4px solid rgba(125,104,170,.45);
+}
+
+.freefire{
+ border-left:4px solid rgba(215,190,126,.45);
+}
+
+.cs2{
+ border-left:4px solid rgba(105,145,190,.45);
+}
+
+.general{
+ border-left:4px solid rgba(255,255,255,.2);
+}
+
+@media(max-width:768px){
+ .news-header h1{
+  font-size:2.2rem;
+ }
+}
