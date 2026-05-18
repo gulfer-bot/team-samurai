@@ -1,32 +1,28 @@
-// =====================================
-// ORG SAMURAI - NEWS PAGE
-// PREMIUM NEWS EXPERIENCE
-// =====================================
+// ===============================
+// ORG SAMURAI - PREMIUM NEWSROOM
+// ===============================
 
 window.addEventListener(
   "DOMContentLoaded",
   ()=>{
 
-    revealNewsCards();
-    hoverEffects();
+    revealNews();
+    premiumMouseGlow();
     smoothParallax();
-    newsGlowEffect();
 
   }
 );
 
-// =====================================
-// REVEAL ANIMATION
-// =====================================
+// ===============================
+// REVEAL ON SCROLL
+// ===============================
 
-function revealNewsCards(){
+function revealNews(){
 
-  const cards =
-  document.querySelectorAll(`
-    .news-card,
-    .featured-news,
-    .glass-card
-  `);
+  const rows =
+  document.querySelectorAll(
+    ".news-row"
+  );
 
   const observer =
   new IntersectionObserver(
@@ -41,83 +37,79 @@ function revealNewsCards(){
 
           entry.target.style.transform =
           "translateY(0px)";
+
         }
 
       });
 
     },
     {
-      threshold:0.15
+      threshold:.15
     }
   );
 
-  cards.forEach(
-    (card,index)=>{
+  rows.forEach(
+    (row,index)=>{
 
-      card.style.opacity =
+      row.style.opacity =
       "0";
 
-      card.style.transform =
-      "translateY(60px)";
+      row.style.transform =
+      "translateY(70px)";
 
-      card.style.transition =
-      `all .9s ease ${index * .06}s`;
+      row.style.transition =
+      `all .95s ease ${index * .08}s`;
 
-      observer.observe(
-        card
-      );
+      observer.observe(row);
 
     }
   );
 
 }
 
-// =====================================
-// HOVER EFFECTS
-// =====================================
+// ===============================
+// PREMIUM GLOW EFFECT
+// ===============================
 
-function hoverEffects(){
+function premiumMouseGlow(){
 
-  const cards =
+  const images =
   document.querySelectorAll(
-    ".news-card"
+    ".news-image"
   );
 
-  cards.forEach(card=>{
+  images.forEach(image=>{
 
-    card.addEventListener(
-      "mouseenter",
-      ()=>{
+    image.addEventListener(
+      "mousemove",
+      (e)=>{
 
-        card.style.transform =
+        const rect =
+        image.getBoundingClientRect();
+
+        const x =
+        e.clientX - rect.left;
+
+        const y =
+        e.clientY - rect.top;
+
+        image.style.background =
         `
-        translateY(-12px)
-        scale(1.02)
-        `;
-
-        card.style.boxShadow =
-        `
-        0 0 45px
-        rgba(140,167,123,.18)
+        radial-gradient(
+          circle at ${x}px ${y}px,
+          rgba(140,167,123,.12),
+          rgba(255,255,255,.03)
+        )
         `;
       }
     );
 
-    card.addEventListener(
+    image.addEventListener(
       "mouseleave",
       ()=>{
 
-        card.style.transform =
-        `
-        translateY(0px)
-        scale(1)
-        `;
-
-        card.style.boxShadow =
-        `
-        0 20px 80px
-        rgba(0,0,0,.35)
-        `;
+        image.style.background =
+        "transparent";
       }
     );
 
@@ -125,15 +117,15 @@ function hoverEffects(){
 
 }
 
-// =====================================
-// PARALLAX EFFECT
-// =====================================
+// ===============================
+// SUBTLE PARALLAX
+// ===============================
 
 function smoothParallax(){
 
-  const cards =
+  const images =
   document.querySelectorAll(
-    ".news-card"
+    ".news-image"
   );
 
   window.addEventListener(
@@ -154,13 +146,12 @@ function smoothParallax(){
         - .5
       ) * 6;
 
-      cards.forEach(card=>{
+      images.forEach(image=>{
 
-        // Don't override hover
-        if(card.matches(":hover"))
+        if(image.matches(":hover"))
           return;
 
-        card.style.transform =
+        image.style.transform =
         `
         translate3d(
           ${x}px,
@@ -172,57 +163,5 @@ function smoothParallax(){
 
     }
   );
-
-}
-
-// =====================================
-// PREMIUM GLOW
-// =====================================
-
-function newsGlowEffect(){
-
-  const cards =
-  document.querySelectorAll(
-    ".news-card"
-  );
-
-  cards.forEach(card=>{
-
-    card.addEventListener(
-      "mousemove",
-      (e)=>{
-
-        const rect =
-        card.getBoundingClientRect();
-
-        const x =
-        e.clientX - rect.left;
-
-        const y =
-        e.clientY - rect.top;
-
-        card.style.background =
-        `
-        radial-gradient(
-          circle at ${x}px ${y}px,
-          rgba(140,167,123,.12),
-          rgba(255,255,255,.03)
-        )
-        `;
-      }
-    );
-
-    card.addEventListener(
-      "mouseleave",
-      ()=>{
-
-        card.style.background =
-        `
-        rgba(245,238,224,.06)
-        `;
-      }
-    );
-
-  });
 
 }
