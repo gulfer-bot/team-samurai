@@ -550,8 +550,24 @@ justify-content:center;
 }
 
 
-.logo img {
+.org-logo {
   width: 50px !important;
-  height: 50px !important;
-  object-fit: contain;
+  height: auto !important;
+  max-width: 50px !important;
+  display: block !important;
+}
+
+.logo,
+.nav-logo,
+.navbar-logo {
+  width: auto !important;
+  height: auto !important;
+}
+
+.logo img,
+.nav-logo img,
+.navbar-logo img {
+  width: 50px !important;
+  max-width: 50px !important;
+  height: auto !important;
 }
